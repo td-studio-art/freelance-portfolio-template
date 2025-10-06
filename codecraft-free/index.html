@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio professionnel pour freelance en développement web et design. Créations sur mesure avec HTML, CSS et JavaScript.">
+    <title>CodeCraft | Freelance Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(255,123,0,0.1) 0%, rgba(255,255,255,1) 100%);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease-out;
+        }
+        .fade-in.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-[#d6d6d6] text-[#202020]">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-[#ff7b00]">CodeCraft</a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="hover:text-[#ff7b00] transition">Accueil</a></li>
+                <li><a href="#projects" class="hover:text-[#ff7b00] transition">Projets</a></li>
+                <li><a href="#about" class="hover:text-[#ff7b00] transition">À propos</a></li>
+                <li><a href="#contact" class="hover:text-[#ff7b00] transition">Contact</a></li>
+            </ul>
+            <button class="md:hidden focus:outline-none">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center">
+        <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0 fade-in">
+                <div class="w-48 h-48 md:w-64 md:h-64 mx-auto md:mx-0 rounded-full overflow-hidden border-4 border-[#ff7b00] shadow-lg">
+                    <img src="https://static.photos/technology/640x360/42" alt="Profile" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="md:w-1/2 fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Salut, je suis <span class="text-[#ff7b00]">Alex</span></h1>
+                <h2 class="text-2xl md:text-3xl mb-6">Web Designer & Front-end Dev</h2>
+                <p class="text-lg mb-8 max-w-lg">Je crée des expériences web modernes et performantes avec une touche personnelle.</p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="px-8 py-3 bg-[#ff7b00] text-white font-medium rounded-full hover:bg-opacity-90 transition transform hover:scale-105">Voir mes projets</a>
+                    <a href="#contact" class="px-8 py-3 border-2 border-[#ff7b00] text-[#ff7b00] font-medium rounded-full hover:bg-[#ff7b00] hover:text-white transition">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center fade-in">À propos de moi</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12 fade-in">
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-6">Passionné par le web depuis 5 ans, j'aide les entreprises et entrepreneurs à concrétiser leurs idées en solutions digitales élégantes et fonctionnelles.</p>
+                    <p class="text-lg mb-6">Mon approche combine design intuitif et code propre pour des résultats qui impressionnent autant qu'ils fonctionnent.</p>
+                    <p class="text-lg">Basé à Paris mais travaillant avec des clients du monde entier.</p>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="skill-card p-6 bg-[#d6d6d6] rounded-lg transition shadow-md">
+                        <i data-feather="code" class="text-[#ff7b00] w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-2">HTML5/CSS3</h3>
+                        <p class="text-sm">Maîtrise des standards web modernes</p>
+                    </div>
+                    <div class="skill-card p-6 bg-[#d6d6d6] rounded-lg transition shadow-md">
+                        <i data-feather="cpu" class="text-[#ff7b00] w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-2">JavaScript</h3>
+                        <p class="text-sm">ES6+, frameworks modernes</p>
+                    </div>
+                    <div class="skill-card p-6 bg-[#d6d6d6] rounded-lg transition shadow-md">
+                        <i data-feather="layout" class="text-[#ff7b00] w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-2">UI/UX Design</h3>
+                        <p class="text-sm">Expériences utilisateur intuitives</p>
+                    </div>
+                    <div class="skill-card p-6 bg-[#d6d6d6] rounded-lg transition shadow-md">
+                        <i data-feather="smartphone" class="text-[#ff7b00] w-8 h-8 mb-3"></i>
+                        <h3 class="font-bold mb-2">Responsive</h3>
+                        <p class="text-sm">Designs adaptés à tous écrans</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-[#d6d6d6]">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center fade-in">Mes réalisations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg fade-in">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://static.photos/technology/640x360/1" alt="Projet 1" class="w-full h-full object-cover">
+                        <div class="project-overlay absolute inset-0 bg-[#ff7b00] bg-opacity-90 flex items-center justify-center opacity-0 transition">
+                            <a href="#" class="text-white font-medium flex items-center">
+                                Voir le projet <i data-feather="arrow-right" class="ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Site E-commerce</h3>
+                        <p class="text-gray-600 mb-4">Plateforme de vente en ligne avec panier personnalisé</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#d6d6d6] rounded-full text-sm">HTML/CSS</span>
+                            <span class="px-3 py-1 bg-[#d6d6d6] rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-[#d6d6d6] rounded-full text-sm">Responsive</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg fade-in">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://static.photos/technology/640x360/2" alt="Projet 2" class="w-full h-full object-cover">
+                        <div class="project-overlay absolute inset-0 bg-[#ff7b00] bg-opacity-90 flex items-center justify-center opacity-0 transition">
+                            <a href="#" class="text-white font-medium flex items-center">
+                                Voir le projet <i data-feather="arrow-right" class="ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Application Web</h3>
+                        <p class="text-gray-600 mb-4">Outil de gestion de projet collaboratif</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#d6d6d6] rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-[#d6d6d6] rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-[#d6d6d6] rounded-full text-sm">API REST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-lg fade-in">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://static.photos/technology/640x360/3" alt="Projet 3" class="w-full h-full object-cover">
+                        <div class="project-overlay absolute inset-0 bg-[#ff7b00] bg-opacity-90 flex items-center justify-center opacity-0 transition">
+                            <a href="#" class="text-white font-medium flex items-center">
+                                Voir le projet <i data-feather="arrow-right" class="ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Portfolio Artistique</h3>
+                        <p class="text-gray-600 mb-4">Galerie interactive pour photographe</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-[#d6d6d6] rounded-full text-sm">CSS Animations</span>
+                            <span class="px-3 py-1 bg-[#d6d6d6] rounded-full text-sm">Lightbox</span>
+                            <span class="px-3 py-1 bg-[#d6d6d6] rounded-full text-sm">Mobile-first</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12 fade-in">
+                <a href="#" class="inline-flex items-center px-6 py-3 border-2 border-[#202020] rounded-full font-medium hover:bg-[#202020] hover:text-white transition">
+                    Voir tous les projets <i data-feather="arrow-right" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold mb-12 text-center fade-in">Travaillons ensemble</h2>
+            <div class="flex flex-col md:flex-row gap-12 fade-in">
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-bold mb-4">Contactez-moi</h3>
+                    <p class="mb-6">Vous avez un projet en tête ? Discutons-en pour le concrétiser.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i data-feather="mail" class="text-[#ff7b00] mr-4 mt-1"></i>
+                            <a href="mailto:contact@codecraft.fr" class="hover:text-[#ff7b00] transition">contact@codecraft.fr</a>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">Réseaux sociaux</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#d6d6d6] flex items-center justify-center hover:bg-[#ff7b00] hover:text-white transition">
+                                <i data-feather="github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#d6d6d6] flex items-center justify-center hover:bg-[#ff7b00] hover:text-white transition">
+                                <i data-feather="linkedin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#d6d6d6] flex items-center justify-center hover:bg-[#ff7b00] hover:text-white transition">
+                                <i data-feather="dribbble"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#d6d6d6] flex items-center justify-center hover:bg-[#ff7b00] hover:text-white transition">
+                                <i data-feather="twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-1">Nom</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-[#d6d6d6] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff7b00]">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-[#d6d6d6] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff7b00]">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-[#d6d6d6] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff7b00]"></textarea>
+                        </div>
+                        <button type="submit" class="px-6 py-3 bg-[#ff7b00] text-white font-medium rounded-lg hover:bg-opacity-90 transition w-full">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#202020] text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; <span id="year"></span> CodeCraft. Tous droits réservés.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-[#ff7b00] transition">
+                        <i data-feather="github"></i>
+                    </a>
+                    <a href="#" class="hover:text-[#ff7b00] transition">
+                        <i data-feather="linkedin"></i>
+                    </a>
+                    <a href="#" class="hover:text-[#ff7b00] transition">
+                        <i data-feather="dribbble"></i>
+                    </a>
+                    <a href="#" class="hover:text-[#ff7b00] transition">
+                        <i data-feather="twitter"></i>
+                    </a>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-sm">Made with <i data-feather="heart" class="text-[#ff7b00] inline"></i> by CodeCraft</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Feather icons
+        feather.replace();
+
+        // Scroll animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        // Initial check
+        fadeInOnScroll();
+
+        // Check on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+
+        // Mobile menu toggle (placeholder - would need more implementation)
+        document.querySelector('button[aria-label="Menu"]').addEventListener('click', () => {
+            // Mobile menu implementation would go here
+            console.log('Mobile menu clicked');
+        });
+    </script>
+</body>
+</html>
